@@ -1,0 +1,102 @@
+<html>
+ <head>
+    <title>TF4016 - Industrial Internet of Things</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/mqtt.js"></script>
+ </head>
+ <body>
+    <ul>
+        <li><img src="https://upload.wikimedia.org/wikipedia/id/9/95/Logo_Institut_Teknologi_Bandung.png" id="logo_itb"/></li>
+        <li>TF4061 - Industrial Internet of Things</li>
+    </ul>
+
+    <p class="container_title">SENSOR</p>
+       <span class="gg">
+                <canvas id = "humidity_value"></canvas></p>
+       </span>
+       <span class="gg">
+                <canvas id = "temperature_value"></canvas></p>
+       </span>
+       <span class="gg">
+                <canvas id = "brightness_value"></canvas></p>
+       </span>
+
+        <p></p>
+        <p></p>
+    </div>
+
+    <div class="sensors_container">
+        <div id="humidity" class="sensors">
+            <p class="sensors_title">Humidity Average</p>
+            <div class="sensors_value">
+              <p class="sensors_number" id="aver1">-</p><p style="display:inline;font-weight: bold"> %</p>
+            </div>
+        </div>
+        <div id="temperature" class="sensors">
+            <p class="sensors_title">Temperature Average</p>
+            <div class="sensors_value">
+              <p class="sensors_number" id="aver2">-</p><p style="display:inline;font-weight: bold"> C</p>
+            </div>
+        </div>
+        <div id="brightness" class="sensors">
+            <p class="sensors_title">Brightness Average </p>
+            <div class="sensors_value">
+              <p class="sensors_number" id="aver3">-</p><p style="display:inline;font-weight: bold"> lx</p>
+            </div>
+        </div>
+
+    <p></p>
+    <div class="graph">
+        <canvas id="canvas1"></canvas>
+    </div>
+    <p></p><p></p><p></p>
+    <div class="graph">
+        <canvas id="canvas2"></canvas>
+    </div>
+    <p></p><p></p><p></p>
+    <div class="graph">
+        <canvas id="canvas3"></canvas>
+    </div>
+
+        <div class="led_container">
+          <div class="ledstatus">
+              <p class="container_title"></p>
+              <div id="manual" class="indicators" onclick="changeLEDButton()">AUTO</div>
+              <p></p>
+          </div>
+        </div>
+
+        <div class="slidecontainer">
+          <input type="range" min="0" max="100" value="1" class="slider" id="myRange4">
+          <p style="color:white"><b>NILAI AMBANG:</b> <span id="demo4"><b></b></span></p>
+        </div>
+
+    <div class="led_container">
+      <div class="ledstatus">
+          <p class="container_title">DIGITAL INPUT</p>
+          <div id="ledstatus1" class="indicators" onclick="changeLEDButton()">LED</div>
+          <p></p><p></p><p></p>
+      </div>
+    </div>
+        <p class="container_title">ANALOG INPUT</p>
+        <div class="slidecontainer">
+          <input type="range" min="0" max="255" value="0" class="slider" id="myRange1">
+          <p style="color:red"><b>R:</b> <span id="demo1"><b></b></span></p>
+          <input type="range" min="0" max="255" value="0" class="slider" id="myRange2">
+          <p style="color:green" ><b>G:</b> <span id="demo2"><b></b></span></p>
+          <input type="range" min="0" max="255" value="0" class="slider" id="myRange3">
+          <p style="color:blue"><b>B:</b> <span id="demo3"><b></b></span></p>
+        </div>
+
+        <div id ="showthis" style='visibility:hidden'>
+          <p style='color:black;' >WARNING! BRIGHTNESS IS TOO LOW</p>
+        </div>
+
+    <script type="text/javascript" src="script/Chart.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/utils.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/gauge.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/script.js" charset="utf-8"></script>
+
+ </body>
+</html>
